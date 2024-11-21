@@ -59,7 +59,7 @@ async def query_projects(query: str):
         results = await processor.query_projects(query)
         return JSONResponse(content={"results": results})
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        raise HTTPException(status_code=404, detail=str(e))
 
 
 @app.get("/projects/")
